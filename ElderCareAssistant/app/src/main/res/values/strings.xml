@@ -1,0 +1,91 @@
+<resources>
+    <!-- Application name -->
+    <string name="app_name">Elder Care Assistant</string>
+
+    <!-- Main Activity Strings -->
+    <string name="welcome_message">Welcome to Elder Care Assistant</string>
+    <string name="main_action_text">Get Started</string>
+    <string name="main_action_description">Tap to access main features of the Elder Care Assistant</string>
+    <string name="emergency_button_text">Emergency Help</string>
+    <string name="emergency_button_description">Tap for emergency assistance or to contact emergency services</string>
+    <string name="accessibility_info">This app is designed to be easy to use with large buttons and clear text</string>
+
+    <!-- Accessibility Strings -->
+    <string name="content_description_main_button">Main action button to start using the application</string>
+    <string name="content_description_emergency_button">Emergency button for urgent help</string>
+
+    <!-- Error Messages -->
+    <string name="error_general">Something went wrong. Please try again.</string>
+    <string name="error_network">Network connection error. Please check your internet connection.</string>
+
+    <!-- Confirmation Messages -->
+    <string name="confirm_emergency">Are you sure you want to call for emergency help?</string>
+    <string name="emergency_calling">Calling emergency services…</string> <!-- Исправлен символ многоточия -->
+
+    <!-- Accessibility Dialog Messages -->
+    <string name="accessibility_title">Accessibility Services</string>
+    <string name="accessibility_dialog_message">This app works better with accessibility services enabled. Would you like to enable them now for improved usability?</string>
+    <string name="enable">Enable</string>
+    <string name="not_now">Not Now</string>
+
+    <!-- Additional Accessibility Strings -->
+    <string name="accessibility_services_enabled">Accessibility services are now enabled</string>
+    <string name="font_size_increased">Text size has been increased for better readability</string>
+
+    <!-- Voice Assistant Strings -->
+    <string name="voice_command_button">Voice command button</string>
+    <string name="main_features">Main Features</string>
+    <string name="messaging">Messaging</string>
+    <string name="emergency_help">Emergency Help</string>
+    <string name="settings_title">Settings</string> <!-- Переименовано для устранения дублирования -->
+
+    <!-- SOS Emergency System Strings -->
+    <string name="sos_button_description">Emergency SOS button - tap to call for help</string>
+    <string name="sos_emergency_title">Emergency SOS</string>
+    <string name="sos_confirm_message">Are you sure you want to call emergency services? Your location will be shared.</string>
+    <string name="sos_location_shared">Your location has been shared with emergency contacts</string>
+    <string name="sos_permission_needed">Emergency services need phone and location permissions to work properly</string>
+    <string name="call_emergency">Call Emergency</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Emergency Contacts Strings -->
+    <string name="emergency_contacts_help">Add people to contact during emergencies. They will receive your location and be notified when you use SOS.</string>
+    <string name="emergency_contact_added">Emergency contact added successfully</string>
+    <string name="emergency_contact_removed">Emergency contact removed</string>
+    <string name="emergency_contact_exists">This contact is already in your emergency list</string>
+    <string name="emergency_contact_limit">You can only have up to 5 emergency contacts</string>
+    <string name="no_phone_number">Selected contact has no phone number</string>
+    <string name="contacts_permission_needed">Contacts permission is needed to add emergency contacts</string>
+
+    <!-- Settings and UI Strings -->
+    <string name="emergency_contacts">Emergency Contacts</string>
+    <string name="accessibility_prompt_message">For best experience, please enable accessibility services</string> <!-- Переименовано для устранения дублирования -->
+    <string name="sos_activation">Emergency activated! Calling %s</string>
+    <string name="permission_granted">Emergency features activated</string>
+
+    <!-- Exercise & Wellness Strings -->
+    <string name="exercise_wellness">Exercise &amp; Wellness</string>
+    <string name="exercise_description">Stay active with guided exercises</string>
+    <string name="exercise_start">Start Exercise</string>
+    <string name="exercise_pause">Pause</string>
+    <string name="exercise_resume">Resume</string>
+    <string name="exercise_stop">Stop</string>
+    <string name="exercise_complete">Exercise Completed!</string>
+    <string name="exercise_completion_message">Congratulations! You\'ve completed this exercise. Keep up the great work!</string>
+    <string name="exercise_do_again">Do Again</string>
+    <string name="exercise_continue">Continue</string>
+    <string name="exercise_started">Exercise started! Follow the animation.</string>
+    <string name="exercise_paused">Exercise paused</string>
+    <string name="exercise_resumed">Exercise resumed</string>
+    <string name="exercise_stop_confirm">Are you sure you want to stop the current exercise?</string>
+    <string name="exercise_exit_confirm">You have an active exercise session. Are you sure you want to exit?</string>
+    <string name="difficulty_beginner">Beginner</string>
+    <string name="difficulty_intermediate">Intermediate</string>
+    <string name="difficulty_advanced">Advanced</string>
+    <string name="view_achievements">View Achievements</string>
+    <string name="view_progress">View Progress</string>
+    <string name="no_exercises_available">No exercises available for this difficulty level</string>
+    <string name="exercise_completed_times">Completed %d times</string>
+    <string name="achievement_unlocked">Achievement Unlocked!</string>
+    <string name="exercise_duration_format">Duration: %d seconds</string>
+</resources>

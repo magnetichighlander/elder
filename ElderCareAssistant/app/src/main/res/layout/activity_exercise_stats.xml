@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_color"
+    tools:context=".ui.exercise.ExerciseStatsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Exercise Progress"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_text_color"
+                android:fontFamily="@font/elderly_friendly_fonts"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Stats Summary -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Summary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_text_color"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/textTotalExercises"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Exercises Completed: 0"
+                        android:textSize="16sp"
+                        android:textColor="@color/primary_text_color"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:id="@+id/textTotalCompletions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Total Sessions: 0"
+                        android:textSize="16sp"
+                        android:textColor="@color/primary_text_color"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:id="@+id/textAverageCompletions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Average per Exercise: 0.0"
+                        android:textSize="16sp"
+                        android:textColor="@color/primary_text_color"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:id="@+id/textCurrentStreak"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Current Streak: No streak"
+                        android:textSize="16sp"
+                        android:textColor="@color/success_color"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:id="@+id/textBestDuration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Best Time: --"
+                        android:textSize="16sp"
+                        android:textColor="@color/primary_text_color" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Detailed Progress -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Detailed Progress"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_text_color"
+                android:layout_marginBottom="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewProgress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/item_exercise_progress" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

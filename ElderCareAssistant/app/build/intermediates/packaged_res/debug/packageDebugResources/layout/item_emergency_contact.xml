@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/margin_small"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    app:cardElevation="@dimen/card_elevation"
+    app:strokeColor="@color/card_stroke_color"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_large"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/touch_target_size_elderly">
+
+        <!-- Contact Info Section -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/margin_medium">
+
+            <!-- Contact Name -->
+            <TextView
+                android:id="@+id/contactName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact Name"
+                android:textSize="@dimen/text_size_large"
+                android:textColor="@color/primary_text_color"
+                android:fontFamily="sans-serif-medium"
+                android:maxLines="1"
+                android:ellipsize="end" />
+
+            <!-- Contact Phone -->
+            <TextView
+                android:id="@+id/contactPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+1 (555) 123-4567"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/secondary_text_color"
+                android:layout_marginTop="@dimen/margin_small"
+                android:maxLines="1"
+                android:ellipsize="end" />
+
+        </LinearLayout>
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Call Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/callButton"
+                style="@style/Widget.ElderCare.Button"
+                android:layout_width="@dimen/touch_target_size_elderly"
+                android:layout_height="@dimen/touch_target_size_elderly"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:backgroundTint="@color/call_button_color"
+                android:text="📞"
+                android:textSize="@dimen/text_size_large"
+                android:textColor="@android:color/white"
+                app:cornerRadius="@dimen/button_corner_radius"
+                android:contentDescription="Call this emergency contact" />
+
+            <!-- Remove Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/removeButton"
+                style="@style/Widget.ElderCare.Button.Outlined"
+                android:layout_width="@dimen/touch_target_size_elderly"
+                android:layout_height="@dimen/touch_target_size_elderly"
+                android:text="✕"
+                android:textSize="@dimen/text_size_large"
+                android:textColor="@color/error_color"
+                app:strokeColor="@color/error_color"
+                app:cornerRadius="@dimen/button_corner_radius"
+                android:contentDescription="Remove this emergency contact" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@color/elderly_friendly_background"
+    android:gravity="center"
+    tools:context=".ui.medication.MedicationVoiceActivity">
+
+    <!-- Large microphone icon -->
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_microphone_large"
+        android:layout_marginBottom="24dp"
+        android:contentDescription="Voice confirmation" />
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voice Confirmation"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="@color/elderly_friendly_text"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/elderly_friendly_font" />
+
+    <!-- Instructions -->
+    <TextView
+        android:id="@+id/instructionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Say 'taken' to confirm you have taken your medication"
+        android:textSize="24sp"
+        android:textColor="@color/elderly_friendly_text_secondary"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/elderly_friendly_font"
+        android:lineSpacingExtra="4dp" />
+
+    <!-- Status indicator -->
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ready to listen..."
+        android:textSize="20sp"
+        android:textColor="@color/elderly_friendly_text_tertiary"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/elderly_friendly_font"
+        android:minHeight="60dp"
+        android:background="@drawable/status_background"
+        android:padding="16dp" />
+
+    <!-- Voice visualization (optional) -->
+    <View
+        android:id="@+id/voiceVisualizer"
+        android:layout_width="200dp"
+        android:layout_height="8dp"
+        android:background="@drawable/voice_visualizer_background"
+        android:layout_marginBottom="32dp"
+        android:visibility="gone" />
+
+    <!-- Action buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Start/Stop listening button -->
+        <Button
+            android:id="@+id/startListeningButton"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="🎤 START LISTENING"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_primary"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/elderly_friendly_font"
+            android:elevation="8dp"
+            android:stateListAnimator="@null" />
+
+        <!-- Back button -->
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="← BACK TO REMINDER"
+            android:textSize="18sp"
+            android:textColor="@color/elderly_friendly_text"
+            android:background="@drawable/button_secondary"
+            android:fontFamily="@font/elderly_friendly_font" />
+
+    </LinearLayout>
+
+    <!-- Help text -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You can say: 'taken', 'done', 'finished', or 'yes'"
+        android:textSize="16sp"
+        android:textColor="@color/elderly_friendly_text_hint"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/elderly_friendly_font"
+        android:alpha="0.7" />
+
+</LinearLayout>

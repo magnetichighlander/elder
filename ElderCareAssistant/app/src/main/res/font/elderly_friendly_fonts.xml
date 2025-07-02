@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 
+    This file defines font families optimized for elderly users.
+    These fonts prioritize readability and clarity.
+    
+    To use custom fonts, place .ttf or .otf files in this directory
+    and reference them here. For now, we're using system fonts
+    that are known to be elderly-friendly.
+    -->
+    
+    <!-- Using system sans-serif font with medium weight for better readability -->
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@android:string/config_bodyFontFamily" />
+    
+    <!-- Medium weight for emphasis -->
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="500"
+        android:font="@android:string/config_bodyFontFamily" />
+    
+    <!-- Bold for headings -->
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="700"
+        android:font="@android:string/config_bodyFontFamily" />
+</font-family>

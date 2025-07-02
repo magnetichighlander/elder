@@ -1,0 +1,40 @@
+<!-- Add Medication Screen -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etMedicationName"
+        android:hint="Medication name"
+        android:textSize="24sp"
+        android:minHeight="60dp"/>
+
+    <Button
+        android:id="@+id/btnVoiceInput"
+        android:text="Voice Input"
+        android:drawableStart="@drawable/ic_mic"
+        android:layout_height="60dp"/>
+
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:timePickerMode="clock"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Day selection with large checkboxes -->
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/daySelector"
+        app:singleSelection="false">
+        <com.google.android.material.chip.Chip
+            android:text="Mon" style="@style/Chip.Large"/>
+        <!-- Repeat for all days -->
+    </com.google.android.material.chip.ChipGroup>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:text="Save Reminder"
+        android:layout_height="70dp"
+        android:textSize="24sp"/>
+</LinearLayout>
+

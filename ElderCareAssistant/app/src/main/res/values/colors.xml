@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors - High contrast for better visibility -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Elderly-Friendly Color Palette -->
+    <!-- High contrast background -->
+    <color name="background_color">#FFFFFFFF</color>
+    
+    <!-- Text colors with high contrast -->
+    <color name="primary_text_color">#FF000000</color>
+    <color name="secondary_text_color">#FF424242</color>
+    
+    <!-- Button colors with good contrast -->
+    <color name="primary_button_color">#FF2196F3</color>
+    <color name="button_stroke_color">#FF1976D2</color>
+    
+    <!-- Emergency button - distinct red color -->
+    <color name="emergency_button_color">#FFD32F2F</color>
+    <color name="emergency_stroke_color">#FFC62828</color>
+    
+    <!-- Success and warning colors -->
+    <color name="success_color">#FF4CAF50</color>
+    <color name="warning_color">#FFFF9800</color>
+    <color name="error_color">#FFF44336</color>
+    
+    <!-- Accessibility colors -->
+    <color name="focus_color">#FF3F51B5</color>
+    <color name="touch_feedback_color">#1A000000</color>
+    
+    <!-- Additional colors for emergency contacts -->
+    <color name="call_button_color">#FF4CAF50</color> <!-- Green for call button -->
+    <color name="warning_text_color">#FFE65100</color> <!-- Orange text for warnings -->
+    <color name="warning_background_color">#FFFFF3E0</color> <!-- Light orange background -->
+    <color name="card_stroke_color">#FFE0E0E0</color> <!-- Light gray for card borders -->
+    
+    <!-- Gray color palette -->
+    <color name="gray_50">#FFFAFAFA</color>
+    <color name="gray_200">#FFEEEEEE</color>
+    <color name="gray_600">#FF757575</color>
+    <color name="gray_700">#FF616161</color>
+    
+    <!-- Green color palette -->
+    <color name="green_600">#FF43A047</color>
+</resources>

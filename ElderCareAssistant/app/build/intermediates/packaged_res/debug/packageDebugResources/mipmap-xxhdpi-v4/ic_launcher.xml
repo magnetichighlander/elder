@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    
+    <!-- Background circle for elderly-friendly visibility -->
+    <path
+        android:fillColor="@color/primary_button_color"
+        android:pathData="M24,24m-22,0a22,22 0,1 1,44 0a22,22 0,1 1,-44 0" />
+    
+    <!-- Heart symbol for care -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M24,34.5l-1.5,-1.35C16.5,27.6 12,23.55 12,18.75c0,-3.6 2.85,-6.45 6.45,-6.45 2.025,0 3.975,0.945 5.55,2.475 1.575,-1.53 3.525,-2.475 5.55,-2.475C32.85,12.3 36,15.15 36,18.75c0,4.8 -4.5,8.85 -10.5,14.4L24,34.5z" />
+    
+    <!-- Plus symbol for assistance -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M22,16h4v6h6v4h-6v6h-4v-6h-6v-4h6v-6z" />
+</vector>

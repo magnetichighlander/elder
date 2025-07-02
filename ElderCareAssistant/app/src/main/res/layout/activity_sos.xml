@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF0000"
+    tools:context=".ui.emergency.SOSActivity">
+
+    <!-- Main Emergency Layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp">
+
+        <!-- Emergency Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EMERGENCY"
+            android:textSize="36sp"
+            android:textColor="@android:color/white"
+            android:textAlignment="center"
+            android:fontFamily="sans-serif-black"
+            android:layout_marginBottom="24dp"
+            android:contentDescription="Emergency SOS screen" />
+
+        <!-- SOS Animation Button -->
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/emergencySosButton"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            app:lottie_rawRes="@raw/sos_animation"
+            app:lottie_loop="true"
+            android:contentDescription="@string/sos_button_description"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Emergency Instructions -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tap the button above to call for help"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:textAlignment="center"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="32dp"
+            android:contentDescription="Tap the button above to call for help" />
+
+        <!-- Status Text (Hidden by default) -->
+        <TextView
+            android:id="@+id/emergencyStatusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:textAlignment="center"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone" />
+
+        <!-- Progress Bar (Hidden by default) -->
+        <ProgressBar
+            android:id="@+id/emergencyProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Space for pushing cancel button to bottom -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Cancel Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancelButton"
+            android:layout_width="200dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:text="Cancel"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:backgroundTint="@android:color/white"
+            android:contentDescription="Cancel emergency call" />
+
+    </LinearLayout>
+
+    <!-- Emergency Contact Info (Optional overlay) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:background="#80000000"
+        android:padding="16dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Emergency contacts will be notified"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            android:textAlignment="center"
+            android:fontFamily="sans-serif" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your location will be shared"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            android:textAlignment="center"
+            android:fontFamily="sans-serif" />
+
+    </LinearLayout>
+
+</FrameLayout>

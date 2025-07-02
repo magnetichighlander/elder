@@ -1,0 +1,110 @@
+[
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\activity_exercise_player.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_exercise_player.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\activity_medication_reminder.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_medication_reminder.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\item_exercise.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\item_exercise.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\activity_sos.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_sos.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\activity_contacts.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_contacts.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\item_mood_grid.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\item_mood_grid.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\dialog_add_contact.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\dialog_add_contact.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\activity_exercise.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_exercise.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\activity_add_medication.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_add_medication.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\activity_mood_tracking.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_mood_tracking.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\item_mood_history.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\item_mood_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\item_contact.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\item_contact.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\item_favorite_contact.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\item_favorite_contact.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\activity_exercise_stats.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_exercise_stats.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\activity_exercise_session.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_exercise_session.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\activity_achievement.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_achievement.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\activity_message_editor.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_message_editor.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\item_achievement.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\item_achievement.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\item_exercise_progress.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\item_exercise_progress.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\item_emergency_contact.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\item_emergency_contact.xml"
+    },
+    {
+        "merged": "com.eldercare.assistant.app-mergeDebugResources-63:/layout/activity_mood_history.xml",
+        "source": "com.eldercare.assistant.app-main-66:/layout/activity_mood_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\activity_favorite_contacts.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_favorite_contacts.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\fragment_achievements.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\fragment_achievements.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\activity_emergency_contact.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_emergency_contact.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\activity_medication_voice.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_medication_voice.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-mergeDebugResources-63:\\layout\\activity_mood_history.xml",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_mood_history.xml"
+    }
+]

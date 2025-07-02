@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="1024dp"
+    android:height="500dp"
+    android:viewportWidth="1024"
+    android:viewportHeight="500">
+    
+    <!-- Background gradient -->
+    <path android:pathData="M0,0L1024,0L1024,500L0,500Z">
+        <aapt:attr name="android:fillColor" xmlns:aapt="http://schemas.android.com/aapt">
+            <gradient
+                android:type="linear"
+                android:startX="0"
+                android:startY="0"
+                android:endX="1024"
+                android:endY="500"
+                android:startColor="#E8F5E8"
+                android:endColor="#B8E6B8"
+                android:centerColor="#D0F0D0"/>
+        </aapt:attr>
+    </path>
+    
+    <!-- Large heart icon (left side) -->
+    <group android:translateX="150" android:translateY="180">
+        <path android:pathData="M60,30C60,13.4 46.6,0 30,0S0,13.4 0,30c0,18 30,50 30,50s30,-32 30,-50"
+            android:fillColor="#4CAF50"
+            android:strokeWidth="2"
+            android:strokeColor="#2E7D32"/>
+        <path android:pathData="M90,30C90,13.4 76.6,0 60,0S30,13.4 30,30c0,18 30,50 30,50s30,-32 30,-50"
+            android:fillColor="#4CAF50"
+            android:strokeWidth="2"
+            android:strokeColor="#2E7D32"/>
+    </group>
+    
+    <!-- Caring hands (right side) -->
+    <group android:translateX="750" android:translateY="200">
+        <path android:pathData="M0,40 Q10,20 30,25 Q50,20 60,40 L55,70 Q50,80 30,75 Q10,80 5,70 Z"
+            android:fillColor="#FFC107"
+            android:strokeWidth="2"
+            android:strokeColor="#F57F17"/>
+        <path android:pathData="M70,45 Q80,25 100,30 Q120,25 130,45 L125,75 Q120,85 100,80 Q80,85 75,75 Z"
+            android:fillColor="#FFC107"
+            android:strokeWidth="2"
+            android:strokeColor="#F57F17"/>
+    </group>
+    
+    <!-- Title text area (center) -->
+    <group android:translateX="300" android:translateY="150">
+        <rect android:width="424"
+            android:height="200"
+            android:fillColor="#00000000"/>
+    </group>
+    
+    <!-- Decorative elements -->
+    <circle cx="100" cy="100" r="8" android:fillColor="#81C784" android:fillAlpha="0.6"/>
+    <circle cx="924" cy="80" r="6" android:fillColor="#FFB74D" android:fillAlpha="0.6"/>
+    <circle cx="150" cy="420" r="10" android:fillColor="#A5D6A7" android:fillAlpha="0.6"/>
+    <circle cx="874" cy="420" r="7" android:fillColor="#FFCC02" android:fillAlpha="0.6"/>
+    
+    <!-- Subtle pattern overlay -->
+    <path android:pathData="M0,0 Q512,100 1024,0 L1024,100 Q512,200 0,100 Z"
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.1"/>
+</vector>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="How do you feel today?"
+            android:textSize="28sp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_text_color"
+            android:contentDescription="Mood tracking question: How do you feel today?"
+            android:importantForAccessibility="yes"/>
+
+        <!-- Mood Selection Grid -->
+        <GridView
+            android:id="@+id/moodGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="3"
+            android:verticalSpacing="16dp"
+            android:horizontalSpacing="16dp"
+            android:stretchMode="columnWidth"
+            android:layout_marginTop="16dp"
+            android:contentDescription="Mood selection grid"
+            android:importantForAccessibility="yes"/>
+
+        <!-- Energy Level -->
+        <TextView
+            android:text="Energy Level:"
+            android:textSize="24sp"
+            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_text_color"
+            android:labelFor="@+id/energySeekBar"
+            android:importantForAccessibility="yes"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="😴"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <SeekBar
+                android:id="@+id/energySeekBar"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="16dp"
+                android:max="4"
+                android:progress="2"
+                android:layout_height="wrap_content"
+                android:contentDescription="Energy level from 1 to 5"
+                android:importantForAccessibility="yes"
+                android:thumbTint="@color/primary_button_color"
+                android:progressTint="@color/primary_button_color"/>
+            <TextView
+                android:text="⚡"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <!-- Optional Note -->
+        <TextView
+            android:text="Add note:"
+            android:textSize="24sp"
+            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_text_color"
+            android:labelFor="@+id/etNote"
+            android:importantForAccessibility="yes"/>
+
+        <EditText
+            android:id="@+id/etNote"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:hint="Optional note about your mood"
+            android:inputType="textMultiLine"
+            android:gravity="top"
+            android:textSize="18sp"
+            android:textColor="@color/primary_text_color"
+            android:textColorHint="@color/secondary_text_color"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:contentDescription="Optional note input field"
+            android:importantForAccessibility="yes"/>
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/btnSave"
+            android:text="Save Mood"
+            android:layout_marginTop="24dp"
+            android:textSize="24sp"
+            android:minHeight="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_primary"
+            android:textColor="@android:color/white"
+            android:contentDescription="Save your mood entry"
+            android:importantForAccessibility="yes"/>
+
+        <!-- History Section -->
+        <TextView
+            android:text="Your Mood History"
+            android:textSize="24sp"
+            android:layout_marginTop="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_text_color"
+            android:contentDescription="Mood history chart section"
+            android:importantForAccessibility="yes"/>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/moodChart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="Line chart showing your mood trends over the last 7 days"
+            android:importantForAccessibility="yes"/>
+    </LinearLayout>
+</ScrollView>

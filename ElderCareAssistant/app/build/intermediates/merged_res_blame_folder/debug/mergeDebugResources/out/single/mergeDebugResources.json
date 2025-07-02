@@ -1,0 +1,326 @@
+[
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_activity_exercise_player.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_exercise_player.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable_ic_play.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\drawable\\ic_play.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable_edit_text_background.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\drawable\\edit_text_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable_ic_default_avatar.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\drawable\\ic_default_avatar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_activity_add_medication.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_add_medication.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable_ic_check.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\drawable\\ic_check.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable_ic_call.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\drawable\\ic_call.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable-anydpi-v24_feature_graphic.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-pngs-60:\\drawable-anydpi-v24\\feature_graphic.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_activity_sos.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_sos.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\mipmap-hdpi_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\mipmap-hdpi\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable_button_play.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\drawable\\button_play.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable_ic_mic_active.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\drawable\\ic_mic_active.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_activity_exercise_session.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_exercise_session.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_activity_exercise_stats.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_exercise_stats.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable-hdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-pngs-60:\\drawable-hdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_item_mood_grid.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\item_mood_grid.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable_ic_trophy.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\drawable\\ic_trophy.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_item_exercise.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\item_exercise.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_activity_mood_tracking.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_mood_tracking.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable_ic_message.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\drawable\\ic_message.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable-xhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-pngs-60:\\drawable-xhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable_ic_add.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\drawable\\ic_add.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\raw_sos_animation.json.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\raw\\sos_animation.json"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_item_contact.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\item_contact.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\mipmap-hdpi_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\mipmap-hdpi\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\raw_shoulder_rolls.json.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\raw\\shoulder_rolls.json"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\raw_neck_stretch.json.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\raw\\neck_stretch.json"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable_button_circular.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\drawable\\button_circular.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\font_elderly_friendly_fonts.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\font\\elderly_friendly_fonts.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_activity_favorite_contacts.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_favorite_contacts.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_activity_exercise.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_exercise.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\raw_success_animation.json.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\raw\\success_animation.json"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable_ic_pause.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\drawable\\ic_pause.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_item_emergency_contact.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\item_emergency_contact.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_activity_emergency_contact.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_emergency_contact.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable_button_primary.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\drawable\\button_primary.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable-ldpi_feature_graphic.png.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-pngs-60:\\drawable-ldpi\\feature_graphic.png"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_item_exercise_progress.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\item_exercise_progress.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_dialog_add_contact.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\dialog_add_contact.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable-mdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-pngs-60:\\drawable-mdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_item_mood_history.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\item_mood_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\raw_voice_commands.txt.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\raw\\voice_commands.txt"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable-xxhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-pngs-60:\\drawable-xxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_activity_contacts.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_contacts.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable_ic_mic.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\drawable\\ic_mic.xml"
+    },
+    {
+        "merged": "com.eldercare.assistant.app-debug-64:/layout_activity_mood_history.xml.flat",
+        "source": "com.eldercare.assistant.app-main-66:/layout/activity_mood_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable_splash_screen.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\drawable\\splash_screen.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_item_achievement.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\item_achievement.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\mipmap-xhdpi_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\mipmap-xhdpi\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable-xhdpi_feature_graphic.png.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-pngs-60:\\drawable-xhdpi\\feature_graphic.png"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\mipmap-mdpi_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\mipmap-mdpi\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable-xxhdpi_feature_graphic.png.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-pngs-60:\\drawable-xxhdpi\\feature_graphic.png"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\raw_leg_lifts.json.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\raw\\leg_lifts.json"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_activity_message_editor.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_message_editor.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\mipmap-xxhdpi_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\mipmap-xxhdpi\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_fragment_achievements.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\fragment_achievements.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\mipmap-xxhdpi_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\mipmap-xxhdpi\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\mipmap-xxxhdpi_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\mipmap-xxxhdpi\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\mipmap-mdpi_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\mipmap-mdpi\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\mipmap-xxxhdpi_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\mipmap-xxxhdpi\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\mipmap-xhdpi_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\mipmap-xhdpi\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable_ic_close.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\drawable\\ic_close.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable_button_emergency.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\drawable\\button_emergency.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_activity_mood_history.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_mood_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable-hdpi_feature_graphic.png.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-pngs-60:\\drawable-hdpi\\feature_graphic.png"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable_circle_blue.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\drawable\\circle_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_activity_medication_voice.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_medication_voice.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_activity_medication_reminder.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_medication_reminder.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable-xxxhdpi_feature_graphic.png.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-pngs-60:\\drawable-xxxhdpi\\feature_graphic.png"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\raw_arm_circles.json.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\raw\\arm_circles.json"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable-mdpi_feature_graphic.png.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-pngs-60:\\drawable-mdpi\\feature_graphic.png"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable-anydpi-v24_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-pngs-60:\\drawable-anydpi-v24\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\raw_breathing.json.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\raw\\breathing.json"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_activity_achievement.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\activity_achievement.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-pngs-60:\\drawable-xxxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\layout_item_favorite_contact.xml.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-main-66:\\layout\\item_favorite_contact.xml"
+    },
+    {
+        "merged": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-debug-64:\\drawable-ldpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Данил\\.gradle\\daemon\\8.13\\com.eldercare.assistant.app-pngs-60:\\drawable-ldpi\\ic_launcher_background.png"
+    }
+]

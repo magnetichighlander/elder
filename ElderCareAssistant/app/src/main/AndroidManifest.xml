@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permissions for elderly-friendly features -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    
+    <!-- Permissions for emergency SOS system -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    
+    <!-- Permissions for medication reminders -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- For initial setup -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    
+    <!-- Permission for offline speech recognition -->
+    <uses-permission android:name="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE" />
+    
+    <application
+        android:name=".ElderCareApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ElderCareAssistant"
+        tools:targetApi="31">
+        
+        <!-- Google Play Services version for offline speech recognition -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ElderCareAssistant">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- Medication reminder activities -->
+        <activity
+            android:name=".ui.medication.MedicationReminderActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ElderCareAssistant.FullScreen"
+            android:showOnLockScreen="true"
+            android:turnScreenOn="true"
+            android:launchMode="singleTop" />
+            
+        <activity
+            android:name=".ui.medication.MedicationVoiceActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ElderCareAssistant.FullScreen"
+            android:showOnLockScreen="true"
+            android:turnScreenOn="true"
+            android:launchMode="singleTop" />
+            
+        <!-- Emergency SOS Activity -->
+        <activity
+            android:name=".ui.emergency.SOSActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ElderCareAssistant.FullScreen"
+            android:showOnLockScreen="true"
+            android:turnScreenOn="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="com.eldercare.assistant.EMERGENCY_SOS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <!-- Emergency Contact Management Activity -->
+        <activity 
+            android:name=".ui.EmergencyContactActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ElderCareAssistant.LargeText"
+            android:label="Emergency Contacts" />
+            
+        <!-- Mood Tracking Activities -->
+        <activity
+            android:name=".ui.mood.MoodTrackingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ElderCareAssistant.LargeText"
+            android:label="Mood Tracking" />
+            
+        <activity
+            android:name=".ui.mood.MoodHistoryActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ElderCareAssistant.LargeText"
+            android:label="Mood History" />
+            
+        <!-- Message Editor Activity -->
+        <activity
+            android:name=".ui.messaging.MessageEditorActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ElderCareAssistant.LargeText"
+            android:label="Send Message" />
+            
+        <!-- Broadcast receiver for notification actions -->
+        <receiver
+            android:name=".service.MedicationActionReceiver"
+            android:exported="false" />
+            
+        <!-- Emergency Service for SOS functionality -->
+        <service
+            android:name=".service.EmergencyService"
+            android:enabled="true"
+            android:exported="false" />
+            
+        <!-- Offline Speech Recognition Service for voice commands -->
+        <service
+            android:name="com.google.android.gms.speech.OfflineSpeechRecognitionService"
+            android:exported="true"
+            android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE">
+            <intent-filter>
+                <action android:name="com.google.android.gms.speech.OfflineSpeechRecognitionService" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

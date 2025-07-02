@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_large"
+    android:background="@color/background_color"
+    tools:context=".ui.EmergencyContactActivity">
+
+    <!-- Header with Back Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/margin_large">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/backButton"
+            style="@style/Widget.ElderCare.Button.Outlined"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_height_large"
+            android:text="← Back"
+            android:textSize="@dimen/text_size_medium"
+            android:contentDescription="Go back to previous screen" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Emergency Contacts"
+            android:textSize="@dimen/text_size_large"
+            android:textColor="@color/primary_text_color"
+            android:textAlignment="center"
+            android:fontFamily="sans-serif-medium"
+            android:contentDescription="Emergency contacts management" />
+
+    </LinearLayout>
+
+    <!-- Help Text -->
+    <TextView
+        android:id="@+id/helpText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/emergency_contacts_help"
+        android:textSize="@dimen/text_size_medium"
+        android:textColor="@color/secondary_text_color"
+        android:textAlignment="center"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:contentDescription="Help text for emergency contacts" />
+
+    <!-- Permission Warning (hidden by default) -->
+    <TextView
+        android:id="@+id/permissionWarning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contacts permission is needed to add emergency contacts. Please grant permission in the next dialog."
+        android:textSize="@dimen/text_size_medium"
+        android:textColor="@color/warning_text_color"
+        android:background="@color/warning_background_color"
+        android:padding="@dimen/padding_medium"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:visibility="gone"
+        android:contentDescription="Permission warning message" />
+
+    <!-- Add Contact Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addContactButton"
+        style="@style/Widget.ElderCare.Button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height_large"
+        android:text="Add Emergency Contact"
+        android:textSize="@dimen/text_size_button"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/primary_button_color"
+        android:drawableStart="@android:drawable/ic_input_add"
+        android:drawablePadding="@dimen/padding_medium"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:contentDescription="Add new emergency contact from phone contacts" />
+
+    <!-- Emergency Contacts List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/contactsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical"
+        android:contentDescription="List of emergency contacts"
+        tools:listitem="@layout/item_emergency_contact" />
+
+    <!-- Empty State Text -->
+    <TextView
+        android:id="@+id/emptyStateText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="No emergency contacts added yet.\n\nTap 'Add Emergency Contact' to get started."
+        android:textSize="@dimen/text_size_medium"
+        android:textColor="@color/secondary_text_color"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/margin_extra_large"
+        android:contentDescription="No emergency contacts message" />
+
+    <!-- Emergency Info Footer -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Emergency contacts will be notified during SOS calls with your location"
+        android:textSize="@dimen/text_size_caption"
+        android:textColor="@color/secondary_text_color"
+        android:textAlignment="center"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:contentDescription="Emergency contacts information" />
+
+</LinearLayout>

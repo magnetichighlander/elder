@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@color/elderly_friendly_background"
+    android:gravity="center"
+    tools:context=".ui.medication.MedicationReminderActivity">
+
+    <!-- Large medication icon -->
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_medication_large"
+        android:layout_marginBottom="24dp"
+        android:contentDescription="Medication reminder" />
+
+    <!-- Medication name -->
+    <TextView
+        android:id="@+id/medicationNameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Medication Name"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:textColor="@color/elderly_friendly_text"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/elderly_friendly_font" />
+
+    <!-- Dosage information -->
+    <TextView
+        android:id="@+id/dosageText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Take 1 tablet"
+        android:textSize="28sp"
+        android:textColor="@color/elderly_friendly_text_secondary"
+        android:gravity="center"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/elderly_friendly_font" />
+
+    <!-- Instructions -->
+    <TextView
+        android:id="@+id/instructionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="After meal"
+        android:textSize="24sp"
+        android:textColor="@color/elderly_friendly_text_secondary"
+        android:gravity="center"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/elderly_friendly_font" />
+
+    <!-- Time information -->
+    <TextView
+        android:id="@+id/timeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Scheduled for 8:00 AM"
+        android:textSize="20sp"
+        android:textColor="@color/elderly_friendly_text_tertiary"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/elderly_friendly_font" />
+
+    <!-- Action buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Confirm button (most prominent) -->
+        <Button
+            android:id="@+id/confirmButton"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="✓ I TOOK MY MEDICATION"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_confirm"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/elderly_friendly_font"
+            android:elevation="8dp"
+            android:stateListAnimator="@null" />
+
+        <!-- Secondary buttons row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- Snooze button -->
+            <Button
+                android:id="@+id/snoozeButton"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="⏰ SNOOZE\n10 MIN"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/button_snooze"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/elderly_friendly_font"
+                android:gravity="center" />
+
+            <!-- Voice button -->
+            <Button
+                android:id="@+id/voiceButton"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="🎤 VOICE\nCONFIRM"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/button_voice"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/elderly_friendly_font"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

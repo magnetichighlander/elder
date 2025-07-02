@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="6dp"
+    app:rippleColor="@color/gray_200">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imageIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="Achievement icon"
+                android:src="@android:drawable/star_on"
+                android:tint="@color/success_color"
+                tools:src="@android:drawable/star_on" />
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_text_color"
+                android:textAlign="center"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/elderly_friendly_fonts"
+                tools:text="First Steps" />
+
+            <TextView
+                android:id="@+id/textDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/gray_600"
+                android:textAlign="center"
+                android:maxLines="2"
+                android:ellipsize="end"
+                tools:text="Complete your first exercise" />
+
+        </LinearLayout>
+
+        <!-- Celebration Animation Overlay -->
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/celebrationAnimation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="false"
+            tools:visibility="visible" />
+
+    </FrameLayout>
+
+</com.google.android.material.card.MaterialCardView>
