@@ -11,12 +11,15 @@ import dagger.assisted.AssistedInject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.time.DayOfWeek
+import java.time.Duration
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.LocalTime
+import java.time.ZonedDateTime
 import java.time.ZoneId
 import java.util.concurrent.TimeUnit
 import android.util.Log
+import kotlinx.coroutines.flow.first
 
 /**
  * Background worker for medication reminders
@@ -153,24 +156,26 @@ class MedicationReminderService @AssistedInject constructor(
      */
     suspend fun scheduleMedicationReminder(medication: Medication) {
         try {
-            val now = LocalTime.now()
-            val today = LocalDate.now()
+            val timeZone = ZoneId.systemDefault()
+            val now = ZonedDateTime.now(timeZone)
+            val today = now.toLocalDate()
             val todayOfWeek = today.dayOfWeek
             val scheduledTime = medication.time
             
-            // Calculate initial delay
+            // Calculate initial delay using ZonedDateTime for proper timezone handling
             val initialDelay = if (medication.days.contains(todayOfWeek)) {
                 // Medication is scheduled for today
-                if (scheduledTime.isAfter(now)) {
+                val todayScheduledTime = scheduledTime.atDate(today).atZone(timeZone)
+                if (todayScheduledTime.isAfter(now)) {
                     // Schedule for today if time hasn't passed
-                    java.time.Duration.between(now, scheduledTime).toMillis()
+                    Duration.between(now, todayScheduledTime).toMillis()
                 } else {
                     // Time has passed today, schedule for next occurrence
-                    getNextOccurrenceDelay(medication, today)
+                    getNextOccurrenceDelay(medication, today, timeZone)
                 }
             } else {
                 // Medication is not scheduled for today, find next occurrence
-                getNextOccurrenceDelay(medication, today)
+                getNextOccurrenceDelay(medication, today, timeZone)
             }
             
             if (initialDelay > 0) {
@@ -208,7 +213,7 @@ class MedicationReminderService @AssistedInject constructor(
     /**
      * Calculates the delay until the next occurrence of a medication reminder
      */
-    private fun getNextOccurrenceDelay(medication: Medication, fromDate: LocalDate): Long {
+    private fun getNextOccurrenceDelay(medication: Medication, fromDate: LocalDate, timeZone: ZoneId): Long {
         var nextDate = fromDate.plusDays(1) // Start checking from tomorrow
         
         // Find the next day this medication should be taken
@@ -222,10 +227,10 @@ class MedicationReminderService @AssistedInject constructor(
             }
         }
         
-        val nextDateTime = LocalDateTime.of(nextDate, medication.time)
-        val currentDateTime = LocalDateTime.now()
+        val nextDateTime = LocalDateTime.of(nextDate, medication.time).atZone(timeZone)
+        val currentDateTime = ZonedDateTime.now(timeZone)
         
-        return java.time.Duration.between(currentDateTime, nextDateTime).toMillis()
+        return Duration.between(currentDateTime, nextDateTime).toMillis()
     }
     
     /**
@@ -302,12 +307,12 @@ class MedicationReminderService @AssistedInject constructor(
      */
     suspend fun scheduleRecurringReminders() {
         try {
-            val activeMedications = repository.getAllActiveMedications()
-            activeMedications.collect { medications ->
-                medications.forEach { medication ->
-                    scheduleWeeklyReminders(medication)
-                }
+            // Use first() to get current data without ongoing collection to prevent memory leaks
+            val medications = repository.getAllActiveMedications().first()
+            medications.forEach { medication ->
+                scheduleWeeklyReminders(medication)
             }
+            Log.d(TAG, "Scheduled recurring reminders for ${medications.size} medications")
         } catch (e: Exception) {
             Log.e(TAG, "Error scheduling recurring reminders", e)
         }
@@ -318,7 +323,9 @@ class MedicationReminderService @AssistedInject constructor(
      */
     private suspend fun scheduleWeeklyReminders(medication: Medication) {
         try {
-            val today = LocalDate.now()
+            val timeZone = ZoneId.systemDefault()
+            val now = ZonedDateTime.now(timeZone)
+            val today = now.toLocalDate()
             
             // Schedule for the next 7 days
             for (dayOffset in 0..6) {
@@ -326,12 +333,11 @@ class MedicationReminderService @AssistedInject constructor(
                 val targetDayOfWeek = targetDate.dayOfWeek
                 
                 if (medication.days.contains(targetDayOfWeek)) {
-                    val targetDateTime = LocalDateTime.of(targetDate, medication.time)
-                    val currentDateTime = LocalDateTime.now()
+                    val targetDateTime = LocalDateTime.of(targetDate, medication.time).atZone(timeZone)
                     
                     // Only schedule if the time is in the future
-                    if (targetDateTime.isAfter(currentDateTime)) {
-                        val delay = java.time.Duration.between(currentDateTime, targetDateTime).toMillis()
+                    if (targetDateTime.isAfter(now)) {
+                        val delay = Duration.between(now, targetDateTime).toMillis()
                         
                         val workData = Data.Builder()
                             .putLong(MedicationReminderWorker.KEY_MEDICATION_ID, medication.id)

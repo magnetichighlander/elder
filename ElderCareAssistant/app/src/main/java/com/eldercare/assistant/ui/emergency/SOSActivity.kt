@@ -1,8 +1,11 @@
 package com.eldercare.assistant.ui.emergency
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.eldercare.assistant.R
@@ -20,6 +23,11 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class SOSActivity : AppCompatActivity() {
 
+    companion object {
+        private const val TAG = "SOSActivity"
+        const val EMERGENCY_VERIFICATION_TOKEN = "emergency_verification_token"
+    }
+
     private lateinit var binding: ActivitySosBinding
     
     @Inject
@@ -28,6 +36,13 @@ class SOSActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         
+        // Validate intent source for security
+        if (!isValidEmergencyIntent(intent)) {
+            Log.w(TAG, "Invalid emergency intent source")
+            finish()
+            return
+        }
+        
         // Set up for emergency situations
         configureEmergencyWindow()
         
@@ -35,6 +50,30 @@ class SOSActivity : AppCompatActivity() {
         setContentView(binding.root)
         
         setupEmergencyUI()
+        setupBackPressedHandler()
+    }
+
+    /**
+     * Validates that the emergency intent comes from a trusted source
+     */
+    private fun isValidEmergencyIntent(intent: Intent): Boolean {
+        // Allow internal app calls or verified emergency triggers
+        val callingPackage = callingActivity?.packageName
+        return callingPackage == packageName || 
+               intent.hasExtra(EMERGENCY_VERIFICATION_TOKEN) ||
+               // Allow if launched from home screen/launcher
+               callingPackage == null
+    }
+
+    /**
+     * Sets up the new back pressed handler
+     */
+    private fun setupBackPressedHandler() {
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                showExitConfirmation()
+            }
+        })
     }
 
     /**
@@ -117,15 +156,14 @@ class SOSActivity : AppCompatActivity() {
     }
 
     /**
-     * Prevent back button from closing emergency screen accidentally
+     * Show confirmation dialog before exiting emergency screen
      */
-    override fun onBackPressed() {
-        // Show confirmation before closing emergency screen
+    private fun showExitConfirmation() {
         AlertDialog.Builder(this)
             .setTitle("Exit Emergency Screen")
             .setMessage("Are you sure you want to exit the emergency screen?")
             .setPositiveButton("Exit") { _, _ ->
-                super.onBackPressed()
+                finish()
             }
             .setNegativeButton("Stay", null)
             .show()

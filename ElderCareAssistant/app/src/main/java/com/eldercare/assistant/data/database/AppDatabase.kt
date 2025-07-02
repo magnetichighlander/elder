@@ -4,6 +4,8 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import android.content.Context
 import com.eldercare.assistant.data.dao.MedicationDao
 import com.eldercare.assistant.data.dao.MedicationLogDao
@@ -29,7 +31,7 @@ import com.eldercare.assistant.data.entity.LocalDateTimeConverter
 @Database(
 entities = [Medication::class, MedicationLog::class, MoodEntry::class, Exercise::class, ExerciseProgress::class, Achievement::class, UserAchievement::class],
     version = 2,
-    exportSchema = false
+    exportSchema = true
 )
 @TypeConverters(LocalTimeConverter::class, DaysConverter::class, LocalDateConverter::class, LocalDateTimeConverter::class)
 abstract class AppDatabase : RoomDatabase() {
@@ -54,10 +56,24 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     DATABASE_NAME
                 )
-                .fallbackToDestructiveMigration()
+                .addMigrations(MIGRATION_1_2)
                 .build()
                 INSTANCE = instance
                 instance
+            }
+        }
+
+        /**
+         * Migration from version 1 to version 2
+         * Add proper migrations instead of destructive fallback
+         */
+        private val MIGRATION_1_2 = object : Migration(1, 2) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                // Example migration - add reminder_sound column to medications table
+                database.execSQL("ALTER TABLE medications ADD COLUMN reminder_sound TEXT")
+                
+                // Add any other schema changes for version 2
+                // This preserves user data instead of deleting it
             }
         }
     }

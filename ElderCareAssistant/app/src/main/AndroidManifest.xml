@@ -77,8 +77,8 @@
             android:showOnLockScreen="true"
             android:turnScreenOn="true"
             android:launchMode="singleTop">
+            <!-- Restricted intent filter for emergency SOS -->
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
                 <action android:name="com.eldercare.assistant.EMERGENCY_SOS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

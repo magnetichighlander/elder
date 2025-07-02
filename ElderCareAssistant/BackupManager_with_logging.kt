@@ -1,16 +1,26 @@
 package com.eldercare.assistant.data
 
 import android.content.Context
+import android.security.keystore.KeyGenParameterSpec
+import android.security.keystore.KeyProperties
 import android.util.Log
+import androidx.room.withTransaction
 import com.eldercare.assistant.data.database.AppDatabase
 import com.eldercare.assistant.data.entities.*
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import java.io.File
+import java.io.FileInputStream
+import java.io.FileOutputStream
 import java.io.FileReader
 import java.io.FileWriter
+import java.security.KeyStore
 import java.time.LocalDate
 import java.time.LocalDateTime
+import javax.crypto.Cipher
+import javax.crypto.KeyGenerator
+import javax.crypto.SecretKey
+import javax.crypto.spec.GCMParameterSpec
 
 class BackupManager(private val context: Context) {
     private val database = AppDatabase.getDatabase(context)
@@ -22,8 +32,12 @@ class BackupManager(private val context: Context) {
 
     companion object {
         private const val TAG = "BackupManager"
-        private const val BACKUP_FILENAME = "eldercare_backup.json"
+        private const val BACKUP_FILENAME = "eldercare_backup.enc"
         private const val CURRENT_BACKUP_VERSION = 1
+        private const val KEY_ALIAS = "eldercare_backup_key"
+        private const val TRANSFORMATION = "AES/GCM/NoPadding"
+        private const val GCM_IV_LENGTH = 12
+        private const val GCM_TAG_LENGTH = 16
     }
 
     data class BackupData(
@@ -107,13 +121,14 @@ class BackupManager(private val context: Context) {
             val jsonString = gson.toJson(backupData)
             Log.d(TAG, "JSON conversion completed. Size: ${jsonString.length} characters")
 
-            // Save to file
+            // Encrypt and save to file
             val backupFile = File(context.filesDir, BACKUP_FILENAME)
             Log.d(TAG, "Backup file path: ${backupFile.absolutePath}")
             
-            FileWriter(backupFile).use { writer ->
-                writer.write(jsonString)
-                Log.d(TAG, "JSON data written to file")
+            val encryptedData = encryptData(jsonString)
+            FileOutputStream(backupFile).use { outputStream ->
+                outputStream.write(encryptedData)
+                Log.d(TAG, "Encrypted data written to file")
             }
 
             // Verify file creation and log details
@@ -125,9 +140,8 @@ class BackupManager(private val context: Context) {
                 Log.d(TAG, "Last modified: ${java.util.Date(lastModified)}")
                 Log.d(TAG, "File readable: ${backupFile.canRead()}")
                 
-                // Additional verification - try to read first few characters
-                val firstChars = backupFile.readText().take(100)
-                Log.d(TAG, "First 100 characters of backup: $firstChars")
+                // Verification for encrypted file
+                Log.d(TAG, "Backup encrypted and saved successfully")
                 
                 true
             } else {
@@ -159,13 +173,18 @@ class BackupManager(private val context: Context) {
             Log.d(TAG, "Backup file found. Size: ${backupFile.length()} bytes")
             Log.d(TAG, "File last modified: ${java.util.Date(backupFile.lastModified())}")
 
-            // Read and parse JSON
-            Log.d(TAG, "Reading backup file...")
-            val jsonString = FileReader(backupFile).use { it.readText() }
-            Log.d(TAG, "File read successfully. Content length: ${jsonString.length} characters")
+            // Read, decrypt and parse JSON
+            Log.d(TAG, "Reading encrypted backup file...")
+            val encryptedData = FileInputStream(backupFile).use { it.readBytes() }
+            Log.d(TAG, "Encrypted file read successfully. Size: ${encryptedData.size} bytes")
+
+            Log.d(TAG, "Decrypting backup data...")
+            val jsonString = decryptData(encryptedData)
+            Log.d(TAG, "File decrypted successfully. Content length: ${jsonString.length} characters")
 
             Log.d(TAG, "Parsing JSON...")
-            val backupData = gson.fromJson(jsonString, BackupData::class.java)
+            val backupData = parseAndValidateBackup(jsonString)
+                ?: return false
             Log.d(TAG, "JSON parsed successfully")
             Log.d(TAG, "Backup version: ${backupData.version}")
             Log.d(TAG, "Backup timestamp: ${backupData.timestamp}")
@@ -188,61 +207,65 @@ class BackupManager(private val context: Context) {
             Log.d(TAG, "  - ${backupData.recentContacts.size} recent contacts")
             Log.d(TAG, "  - ${backupData.settings.size} settings")
 
-            // Clear existing data
-            Log.d(TAG, "Clearing existing database data...")
-            clearAllData()
-            Log.d(TAG, "Existing data cleared")
+            // Use database transaction for atomic restoration
+            Log.d(TAG, "Starting atomic backup restoration...")
+            database.withTransaction {
+                // Clear existing data
+                Log.d(TAG, "Clearing existing database data...")
+                clearAllData()
+                Log.d(TAG, "Existing data cleared")
 
-            // Restore data with detailed logging
-            Log.d(TAG, "Restoring medications...")
-            backupData.medications.forEach { 
-                database.medicationDao().insertMedication(it)
+                // Restore data with detailed logging
+                Log.d(TAG, "Restoring medications...")
+                backupData.medications.forEach { 
+                    database.medicationDao().insertMedication(it)
+                }
+                Log.d(TAG, "✅ Medications restored: ${backupData.medications.size}")
+
+                Log.d(TAG, "Restoring emergency contacts...")
+                backupData.contacts.forEach { 
+                    database.emergencyContactDao().insertContact(it)
+                }
+                Log.d(TAG, "✅ Emergency contacts restored: ${backupData.contacts.size}")
+
+                Log.d(TAG, "Restoring mood entries...")
+                backupData.moods.forEach { 
+                    database.moodDao().insertMood(it)
+                }
+                Log.d(TAG, "✅ Mood entries restored: ${backupData.moods.size}")
+
+                Log.d(TAG, "Restoring exercises...")
+                backupData.exercises.forEach { 
+                    database.exerciseDao().insertExercise(it)
+                }
+                Log.d(TAG, "✅ Exercises restored: ${backupData.exercises.size}")
+
+                Log.d(TAG, "Restoring exercise progress...")
+                backupData.exerciseProgress.forEach { 
+                    database.exerciseProgressDao().insertProgress(it)
+                }
+                Log.d(TAG, "✅ Exercise progress restored: ${backupData.exerciseProgress.size}")
+
+                Log.d(TAG, "Restoring achievements...")
+                backupData.achievements.forEach { 
+                    database.achievementDao().insertAchievement(it)
+                }
+                Log.d(TAG, "✅ Achievements restored: ${backupData.achievements.size}")
+
+                Log.d(TAG, "Restoring message templates...")
+                backupData.messageTemplates.forEach { 
+                    database.messageTemplateDao().insertTemplate(it)
+                }
+                Log.d(TAG, "✅ Message templates restored: ${backupData.messageTemplates.size}")
+
+                Log.d(TAG, "Restoring recent contacts...")
+                backupData.recentContacts.forEach { 
+                    database.recentContactDao().insertRecentContact(it)
+                }
+                Log.d(TAG, "✅ Recent contacts restored: ${backupData.recentContacts.size}")
             }
-            Log.d(TAG, "✅ Medications restored: ${backupData.medications.size}")
 
-            Log.d(TAG, "Restoring emergency contacts...")
-            backupData.contacts.forEach { 
-                database.emergencyContactDao().insertContact(it)
-            }
-            Log.d(TAG, "✅ Emergency contacts restored: ${backupData.contacts.size}")
-
-            Log.d(TAG, "Restoring mood entries...")
-            backupData.moods.forEach { 
-                database.moodDao().insertMood(it)
-            }
-            Log.d(TAG, "✅ Mood entries restored: ${backupData.moods.size}")
-
-            Log.d(TAG, "Restoring exercises...")
-            backupData.exercises.forEach { 
-                database.exerciseDao().insertExercise(it)
-            }
-            Log.d(TAG, "✅ Exercises restored: ${backupData.exercises.size}")
-
-            Log.d(TAG, "Restoring exercise progress...")
-            backupData.exerciseProgress.forEach { 
-                database.exerciseProgressDao().insertProgress(it)
-            }
-            Log.d(TAG, "✅ Exercise progress restored: ${backupData.exerciseProgress.size}")
-
-            Log.d(TAG, "Restoring achievements...")
-            backupData.achievements.forEach { 
-                database.achievementDao().insertAchievement(it)
-            }
-            Log.d(TAG, "✅ Achievements restored: ${backupData.achievements.size}")
-
-            Log.d(TAG, "Restoring message templates...")
-            backupData.messageTemplates.forEach { 
-                database.messageTemplateDao().insertTemplate(it)
-            }
-            Log.d(TAG, "✅ Message templates restored: ${backupData.messageTemplates.size}")
-
-            Log.d(TAG, "Restoring recent contacts...")
-            backupData.recentContacts.forEach { 
-                database.recentContactDao().insertRecentContact(it)
-            }
-            Log.d(TAG, "✅ Recent contacts restored: ${backupData.recentContacts.size}")
-
-            // Restore settings
+            // Restore settings outside of database transaction
             Log.d(TAG, "Restoring settings...")
             val sharedPrefs = context.getSharedPreferences("eldercare_settings", Context.MODE_PRIVATE)
             val editor = sharedPrefs.edit()
@@ -348,7 +371,8 @@ class BackupManager(private val context: Context) {
         }
 
         return try {
-            val jsonString = FileReader(backupFile).use { it.readText() }
+            val encryptedData = FileInputStream(backupFile).use { it.readBytes() }
+            val jsonString = decryptData(encryptedData)
             val backupData = gson.fromJson(jsonString, BackupData::class.java)
             
             val info = BackupInfo(
@@ -361,6 +385,78 @@ class BackupManager(private val context: Context) {
             info
         } catch (e: Exception) {
             Log.e(TAG, "Error reading backup info", e)
+            null
+        }
+    }
+
+    /**
+     * Encrypts data using Android Keystore
+     */
+    private fun encryptData(data: String): ByteArray {
+        val cipher = Cipher.getInstance(TRANSFORMATION)
+        val secretKey = getOrCreateSecretKey()
+        cipher.init(Cipher.ENCRYPT_MODE, secretKey)
+        
+        val encryptedData = cipher.doFinal(data.toByteArray())
+        val iv = cipher.iv
+        
+        // Combine IV and encrypted data
+        return iv + encryptedData
+    }
+    
+    /**
+     * Decrypts data using Android Keystore
+     */
+    private fun decryptData(encryptedDataWithIv: ByteArray): String {
+        val cipher = Cipher.getInstance(TRANSFORMATION)
+        val secretKey = getOrCreateSecretKey()
+        
+        // Extract IV and encrypted data
+        val iv = encryptedDataWithIv.sliceArray(0..GCM_IV_LENGTH - 1)
+        val encryptedData = encryptedDataWithIv.sliceArray(GCM_IV_LENGTH until encryptedDataWithIv.size)
+        
+        val gcmSpec = GCMParameterSpec(GCM_TAG_LENGTH * 8, iv)
+        cipher.init(Cipher.DECRYPT_MODE, secretKey, gcmSpec)
+        
+        val decryptedData = cipher.doFinal(encryptedData)
+        return String(decryptedData)
+    }
+    
+    /**
+     * Gets or creates a secret key in Android Keystore
+     */
+    private fun getOrCreateSecretKey(): SecretKey {
+        val keyStore = KeyStore.getInstance("AndroidKeyStore")
+        keyStore.load(null)
+        
+        return if (keyStore.containsAlias(KEY_ALIAS)) {
+            keyStore.getKey(KEY_ALIAS, null) as SecretKey
+        } else {
+            val keyGenerator = KeyGenerator.getInstance(KeyProperties.KEY_ALGORITHM_AES, "AndroidKeyStore")
+            val spec = KeyGenParameterSpec.Builder(KEY_ALIAS, 
+                KeyProperties.PURPOSE_ENCRYPT or KeyProperties.PURPOSE_DECRYPT)
+                .setBlockModes(KeyProperties.BLOCK_MODE_GCM)
+                .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_NONE)
+                .build()
+            keyGenerator.init(spec)
+            keyGenerator.generateKey()
+        }
+    }
+
+    /**
+     * Parses and validates backup data
+     */
+    private fun parseAndValidateBackup(jsonString: String): BackupData? {
+        return try {
+            val backupData = gson.fromJson(jsonString, BackupData::class.java)
+            // Add validation logic here
+            if (backupData.version > CURRENT_BACKUP_VERSION) {
+                Log.w(TAG, "Backup version ${backupData.version} is newer than supported version $CURRENT_BACKUP_VERSION")
+                return null
+            }
+            backupData
+        } catch (e: Exception) {
+            Log.e(TAG, "Error parsing backup data", e)
             null
         }
     }

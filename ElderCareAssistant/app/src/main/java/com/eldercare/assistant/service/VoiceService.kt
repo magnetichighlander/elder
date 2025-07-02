@@ -1,13 +1,16 @@
 package com.eldercare.assistant.service
 
+import android.Manifest
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import android.util.Log
+import androidx.core.content.ContextCompat
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import java.util.*
@@ -182,6 +185,11 @@ class VoiceService @Inject constructor(
      * Starts listening for voice commands
      */
     fun startListening() {
+        if (!hasRecordAudioPermission()) {
+            Log.w(TAG, "Missing RECORD_AUDIO permission")
+            return
+        }
+        
         if (speechRecognizer == null) {
             Log.w(TAG, "Speech recognizer not available")
             return
@@ -202,6 +210,16 @@ class VoiceService @Inject constructor(
             _isListening.value = false
         }
     }
+
+    /**
+     * Checks if RECORD_AUDIO permission is granted
+     */
+    private fun hasRecordAudioPermission(): Boolean {
+        return ContextCompat.checkSelfPermission(
+            context,
+            Manifest.permission.RECORD_AUDIO
+        ) == PackageManager.PERMISSION_GRANTED
+    }
     
     /**
      * Stops listening for voice commands
@@ -217,14 +235,27 @@ class VoiceService @Inject constructor(
     fun isMedicationConfirmed(speechResult: String?): Boolean {
         if (speechResult.isNullOrBlank()) return false
         
-        val confirmationWords = listOf(
-            "taken", "done", "finished", "completed", "yes", "confirmed",
-            "took it", "took them", "have taken", "already taken"
+        val positivePatterns = listOf(
+            "^(yes|taken|done|finished|completed)$",
+            "^(i )?((have|already) )?(took|taken) (it|them|medication)$",
+            "^(i )?finished (taking )?medication$",
+            "^confirmed$"
         )
         
-        val lowerResult = speechResult.lowercase()
-        return confirmationWords.any { word -> 
-            lowerResult.contains(word) 
+        val negativePatterns = listOf(
+            "no", "not", "haven't", "didn't", "won't", "can't", "refuse"
+        )
+        
+        val lowerResult = speechResult.lowercase().trim()
+        
+        // Check for negative words first
+        if (negativePatterns.any { lowerResult.contains(it) }) {
+            return false
+        }
+        
+        // Check for positive patterns
+        return positivePatterns.any { pattern ->
+            lowerResult.matches(Regex(pattern))
         }
     }
     

@@ -4,6 +4,7 @@ import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.location.Location
 import android.net.Uri
@@ -24,12 +25,14 @@ import javax.inject.Singleton
  */
 @Singleton
 class EmergencyService @Inject constructor(
-    @ApplicationContext private val context: Context
+    @ApplicationContext private val context: Context,
+    private val sharedPrefs: SharedPreferences
 ) {
 
     companion object {
+        private const val TAG = "EmergencyService"
         private const val DEFAULT_EMERGENCY_NUMBER = "911"
-        private const val DEFAULT_CONTACT_NUMBER = "+1234567890" // Should be configurable
+        private const val PREF_EMERGENCY_CONTACT = "emergency_contact_number"
     }
 
     /**
@@ -78,20 +81,43 @@ class EmergencyService @Inject constructor(
             return
         }
 
+        val emergencyContact = getEmergencyContact()
+        if (emergencyContact == null) {
+            Log.e(TAG, "No emergency contact configured")
+            // Could show user prompt to configure emergency contact
+            return
+        }
+
         LocationServices.getFusedLocationProviderClient(context).lastLocation
             .addOnSuccessListener { location: Location? ->
                 location?.let {
                     val locationMessage = "Emergency! I need help. My location: " +
                             "https://maps.google.com/?q=${it.latitude},${it.longitude}"
                     
-                    sendSMS(DEFAULT_CONTACT_NUMBER, locationMessage)
+                    sendSMS(emergencyContact, locationMessage)
                 }
             }
             .addOnFailureListener {
                 // Send SMS without location if GPS fails
                 val emergencyMessage = "Emergency! I need help. Unable to get location."
-                sendSMS(DEFAULT_CONTACT_NUMBER, emergencyMessage)
+                sendSMS(emergencyContact, emergencyMessage)
             }
+    }
+
+    /**
+     * Gets the configured emergency contact number
+     */
+    private fun getEmergencyContact(): String? {
+        return sharedPrefs.getString(PREF_EMERGENCY_CONTACT, null)
+    }
+
+    /**
+     * Sets the emergency contact number
+     */
+    fun setEmergencyContact(phoneNumber: String) {
+        sharedPrefs.edit()
+            .putString(PREF_EMERGENCY_CONTACT, phoneNumber)
+            .apply()
     }
 
     /**

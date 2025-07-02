@@ -34,8 +34,8 @@ interface MedicationDao {
     suspend fun updateMedicationActiveStatus(id: Long, isActive: Boolean)
     
     // Custom query to get medications for specific day
-    @Query("SELECT * FROM medications WHERE isActive = 1 AND days LIKE '%' || :dayOfWeek || '%' ORDER BY time ASC")
-    suspend fun getMedicationsForDay(dayOfWeek: String): List<Medication>
+    @Query("SELECT * FROM medications WHERE isActive = 1 AND days LIKE :dayPattern ORDER BY time ASC")
+    suspend fun getMedicationsForDay(dayPattern: String): List<Medication>
 }
 
 /**

@@ -37,8 +37,10 @@ class MedicationRepository @Inject constructor(
     suspend fun updateMedicationActiveStatus(id: Long, isActive: Boolean) = 
         medicationDao.updateMedicationActiveStatus(id, isActive)
     
-    suspend fun getMedicationsForDay(dayOfWeek: DayOfWeek): List<Medication> = 
-        medicationDao.getMedicationsForDay(dayOfWeek.name)
+    suspend fun getMedicationsForDay(dayOfWeek: DayOfWeek): List<Medication> {
+        val dayPattern = "%${dayOfWeek.name}%"
+        return medicationDao.getMedicationsForDay(dayPattern)
+    }
     
     suspend fun getTodaysMedications(): List<Medication> {
         val today = LocalDate.now().dayOfWeek
